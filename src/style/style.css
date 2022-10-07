@@ -109,6 +109,7 @@
 }
 
 .about{
+    margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +124,6 @@
     width: 1000px;
     height: 500px;
     background-color: rgba(245, 236, 236, 0.309);
-    /* background-color: rgba(14, 14, 14, 0.132); */
     border-radius: 30px;
     font-size: 25px;
     color: black;

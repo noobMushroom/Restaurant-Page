@@ -6,7 +6,11 @@ import footer from './footer';
 
 
 const defaultPage = () => {
-    const main = document.getElementById("content")
+    const main=document.createElement('div');
+    main.classList.add('content')
+    main.setAttribute('id','content');
+
+    // const main = document.getElementById("content")
     const container = document.createElement('div')
     container.classList.add("container");
     container.setAttribute('id', 'container')
@@ -17,8 +21,10 @@ const defaultPage = () => {
     homeDiv.appendChild(header)
     homeDiv.appendChild(homepage)
     homeDiv.appendChild(footer)
+
+    return main
 }
 
-defaultPage()
+document.body.appendChild(defaultPage())
 
 
