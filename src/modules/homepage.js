@@ -7,7 +7,7 @@ const introduction=()=>{
     const img=document.createElement('img');
     img.classList.add('logoImg');
 
-    img.src="../images/logo4.jpg"
+    img.src="../src/images/logo4.jpg"
     introPara.appendChild(img)
 
     const para= document.createElement("p");
