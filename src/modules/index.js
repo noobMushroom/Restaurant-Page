@@ -5,22 +5,19 @@ import homepage from './homepage';
 import footer from './footer';
 
 
-
-
 const defaultPage = () => {
     const main = document.getElementById("content")
     const container = document.createElement('div')
     container.classList.add("container");
     container.setAttribute('id', 'container')
     main.appendChild(container)
-    container.appendChild(header)
-    container.appendChild(homepage)
-    container.appendChild(footer)
-
-    return main
+    const homeDiv=document.createElement('div')
+    homeDiv.classList.add('home')
+    container.appendChild(homeDiv)
+    homeDiv.appendChild(header)
+    homeDiv.appendChild(homepage)
+    homeDiv.appendChild(footer)
 }
-
-export default defaultPage
 
 defaultPage()
 

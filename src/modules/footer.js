@@ -1,7 +1,12 @@
 const footer =()=>{
     const foot= document.createElement("footer");
     foot.classList.add('foot');
-    foot.textContent="i am the footer and i should be in the bottom of the page."
+    const footInfo=document.createElement('div');
+    footInfo.classList.add('footInfo');
+    footInfo.innerHTML='&copy created by MUSHROOM'
+
+    foot.appendChild(footInfo)
+
     return foot
 }
 

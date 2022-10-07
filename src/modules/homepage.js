@@ -3,11 +3,19 @@ import { divide } from "lodash"
 const introduction=()=>{
     const introPara= document.createElement("div");
     introPara.classList.add("introPara");
+
+    const img=document.createElement('img');
+    img.classList.add('logoImg');
+
+    img.src="../src/images/logo4.jpg"
+    introPara.appendChild(img)
+
     const para= document.createElement("p");
     para.classList.add("para");
-    para.innerHTML='Welcome to <b>ANDURIAN RESTAURANTS</b> we are an intergalactic restaurant brand. We are making delicious food for the last 5000 years. We have the best chefs in universe.We have restaurants all the across universe and menu for every planet and every species. With advance delivery options.<br> <i>Hope you enjoy your time with us.</i>';
-    introPara.appendChild(para);
 
+
+    para.innerHTML='Welcome to <b>ANDURIAN RESTAURANTS</b>';
+    introPara.appendChild(para);
     return introPara
 }
 

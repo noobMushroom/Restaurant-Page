@@ -13,28 +13,25 @@ class Dishes{
 const menuItems =()=>{
     const dishCard=document.createElement('div');
     dishCard.classList.add('dishCard')
-    const dish1=new Dishes('Olktors gamma-supplement', 'A good supplement before going to travel hot planet it will increase your body resistance for heat', "400 gold coins","/src/images/7877022.jpg");
-    const dish2=new Dishes('something2', 'something nice', 89);
-    const dish3=new Dishes('something3', 'something nice', 89);
-    const dish4=new Dishes('something4', 'something nice', 89);
-    const dish5=new Dishes('something5', 'something nice', 89);
-    const dish6=new Dishes('something6', 'something nice', 89);
-    const dish7=new Dishes('something7', 'something nice', 89);
-    const dish8=new Dishes('something8', 'something nice', 89);
-    const dish9=new Dishes('something9', 'something nice', 89);
-    const dish10=new Dishes('something10', 'something nice', 89);
+    const dish1=new Dishes('Olktors gamma-supplement', 'A good Breakfast before going to some hot planet it will increase your body resistance for heat', "400 gold coins","/src/images/food1.jpg");
+    const dish2=new Dishes('pizza', 'This smoked farro (emmer) roast is scarcely thin with a gooey texture. It tastes strongly of pumpkin seeds with carom (ajwain) and has a large amount of thyme. It smells like hand sanitizer with just the right amount of currants. It is uniquely cultural. You can really feel how high in probiotics and how high in riboflavin it is.', "800 gold coins", "/src/images/pizza.jpg");
+    const dish3=new Dishes('burger', 'This fried red beans tapas is scarcely flaky with a hearty texture. It has subtle hints of teff with dill and has salvia. It smells like oranges with apricots. It is delicate and floral. You can really feel how BPA-free and how high in calcium it is.', "8900 gold coins", "/src/images/burger.jpg");
+    const dish4=new Dishes('Smoothies', 'This breaded strawberries stew is moderately smooth with a juicy texture. It tastes strongly of tamarind with ginger and has a lot of poppy seeds. It smells like a meadow with a dash of broccoli raab. It is faintly undesirable. You can really feel how packed with phytonutrients and how alkaline it is.', "100 gold coins", '/src/images/juice.jpg');
     const dish=[]
-    dish.push(dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8,dish9, dish10)
+    dish.push(dish1, dish2, dish3, dish4)
 
 
     dish.forEach(dish=>{     
         const card= document.createElement('div');
         card.classList.add('card')
         dishCard.appendChild(card)
+        //dish name
         const name= document.createElement('div')
         name.classList.add("dishName");
+        //dish description
         const description=document.createElement('div');
         description.classList.add("description");
+        //dish price
         const price = document.createElement('div');
         price.classList.add('price');
 
@@ -54,10 +51,9 @@ const menuItems =()=>{
         infoDiv.appendChild(name)
         infoDiv.appendChild(description)
         infoDiv.appendChild(price)
-        // card.appendChild(img)
         name.innerHTML=dish.name;
         description.innerHTML=dish.description;
-        price.innerHTML=`${dish.price}$`;
+        price.innerHTML=`${dish.price}`;
     })
 
     return dishCard
@@ -69,15 +65,6 @@ const menu = () => {
     menu.appendChild(menuItems())
     return menu
 
-}
-
-const menuLoad=()=>{
-    const mainDiv=document.getElementById("content")
-    mainDiv.innerHTML=""
-    mainDiv.appendChild(header)
-    mainDiv.appendChild(menu())
-
-    return mainDiv
 }
 
 export default menu()
