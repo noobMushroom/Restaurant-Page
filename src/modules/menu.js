@@ -1,14 +1,19 @@
+import header from './header';
+import footer from './footer';
+
+
 class Dishes{
- constructor(name, description, price) {
+ constructor(name, description, price, img) {
    this.name=name
    this.description=description
    this.price=price
+   this.img=img
 }}
 
 const menuItems =()=>{
     const dishCard=document.createElement('div');
     dishCard.classList.add('dishCard')
-    const dish1=new Dishes('Olktors gamma-supplement', 'A good supplement before going to travel hot planet it will increase your body resistance for heat', "400 gold coins");
+    const dish1=new Dishes('Olktors gamma-supplement', 'A good supplement before going to travel hot planet it will increase your body resistance for heat', "400 gold coins","/src/images/7877022.jpg");
     const dish2=new Dishes('something2', 'something nice', 89);
     const dish3=new Dishes('something3', 'something nice', 89);
     const dish4=new Dishes('something4', 'something nice', 89);
@@ -21,7 +26,8 @@ const menuItems =()=>{
     const dish=[]
     dish.push(dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8,dish9, dish10)
 
-    for (const i of dish){
+
+    dish.forEach(dish=>{     
         const card= document.createElement('div');
         card.classList.add('card')
         dishCard.appendChild(card)
@@ -32,14 +38,27 @@ const menuItems =()=>{
         const price = document.createElement('div');
         price.classList.add('price');
 
-        card.appendChild(name)
-        card.appendChild(description)
-        card.appendChild(price)
-        card.appendChild(img)
-        name.innerHTML=i.name;
-        description.innerHTML=i.description;
-        price.innerHTML=`${i.price}$`;
-    }
+        //div for info
+
+        const infoDiv=document.createElement('div');
+        infoDiv.classList.add('infoDiv');
+        card.appendChild(infoDiv)
+
+        // creating div for images
+
+        const imgDiv= document.createElement('div');
+        imgDiv.classList.add('imgDiv');
+        card.appendChild(imgDiv);
+        imgDiv.innerHTML=`<img src="..${dish.img}">`
+
+        infoDiv.appendChild(name)
+        infoDiv.appendChild(description)
+        infoDiv.appendChild(price)
+        // card.appendChild(img)
+        name.innerHTML=dish.name;
+        description.innerHTML=dish.description;
+        price.innerHTML=`${dish.price}$`;
+    })
 
     return dishCard
 }
@@ -50,6 +69,15 @@ const menu = () => {
     menu.appendChild(menuItems())
     return menu
 
+}
+
+const menuLoad=()=>{
+    const mainDiv=document.getElementById("content")
+    mainDiv.innerHTML=""
+    mainDiv.appendChild(header)
+    mainDiv.appendChild(menu())
+
+    return mainDiv
 }
 
 export default menu()

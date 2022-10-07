@@ -116,3 +116,18 @@
     /* width: 300px; */
     border:2px solid red;
 }
+
+.card{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.infoDiv{
+    margin:0 10px;
+}
+
+.imgDiv img{
+    width: 200px;
+    height: 200px;
+}
