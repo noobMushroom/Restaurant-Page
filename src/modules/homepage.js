@@ -1,29 +1,41 @@
-import { divide } from "lodash"
+import { divide } from 'lodash';
+import bgImage from '../images/steampunk-5627683-min.png';
 
-const introduction=()=>{
-    const introPara= document.createElement("div");
-    introPara.classList.add("introPara");
+const homepageBackground = () => {
+  const background = document.createElement('div');
+  background.classList.add('background');
+  const backgroundImage = document.createElement('img');
+  backgroundImage.classList.add('backgroundImage');
+  backgroundImage.src = bgImage;
+  background.appendChild(backgroundImage);
+  return background;
+};
 
-    const img=document.createElement('img');
-    img.classList.add('logoImg');
+const introduction = () => {
+  const introPara = document.createElement('div');
+  introPara.classList.add('introPara');
 
-    img.src="../src/images/logo4.jpg"
-    introPara.appendChild(img)
+  const img = document.createElement('img');
+  img.classList.add('logoImg');
 
-    const para= document.createElement("p");
-    para.classList.add("para");
+  img.src = '../src/images/logo4.jpg';
+  introPara.appendChild(img);
 
+  const para = document.createElement('p');
+  para.classList.add('para');
 
-    para.innerHTML='Welcome to <b>ANDURIAN RESTAURANTS</b>';
-    introPara.appendChild(para);
-    return introPara
+  para.innerHTML = 'Welcome to <b>ANDURIAN RESTAURANTS</b>';
+  introPara.appendChild(para);
+  return introPara;
+};
+
+function homepage() {
+  const intro = document.createElement('div');
+  intro.classList.add('intro');
+  intro.appendChild(homepageBackground());
+  intro.appendChild(introduction());
+  return intro;
 }
 
-function homepage(){
-    const intro= document.createElement("div");
-    intro.classList.add("intro")
-    intro.appendChild(introduction()) 
-    return intro
-}
+export default homepage();
 
-export default homepage()
