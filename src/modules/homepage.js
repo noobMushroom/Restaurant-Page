@@ -1,5 +1,6 @@
 import { divide } from 'lodash';
 import bgImage from '../images/steampunk-5627683-min.png';
+import images from '../images/logo4.jpg';
 
 const homepageBackground = () => {
   const background = document.createElement('div');
@@ -18,7 +19,7 @@ const introduction = () => {
   const img = document.createElement('img');
   img.classList.add('logoImg');
 
-  img.src = '../src/images/logo4.jpg';
+  img.src = images;
   introPara.appendChild(img);
 
   const para = document.createElement('p');
@@ -38,4 +39,3 @@ function homepage() {
 }
 
 export default homepage();
-
